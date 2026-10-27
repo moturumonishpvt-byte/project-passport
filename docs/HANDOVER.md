@@ -16,10 +16,10 @@ A phase cannot be considered complete until:
 
 ## 2. Handover Matrix
 
-| From Phase  | Outgoing Owner | To Phase    | Incoming Owner | Handover Checklist Signed | Acceptance Status         |
-| :---------- | :------------- | :---------- | :------------- | :------------------------ | :------------------------ |
-| **Phase 0** | Monish         | **Phase 1** | Ashif          | `[ ]` In Progress         | Awaiting verification run |
-| **Phase 1** | Ashif          | **Phase 2** | Nitish         | `[ ]` Pending             | Blocked by Phase 0        |
-| **Phase 2** | Nitish         | **Phase 3** | Darshan        | `[ ]` Pending             | Blocked by Phase 1        |
-| **Phase 3** | Darshan        | **Phase 4** | Monish         | `[ ]` Pending             | Blocked by Phase 2        |
-| **Phase 4** | Monish         | **Release** | All Team       | `[ ]` Pending             | Blocked by Phase 3        |
+| From Phase  | Outgoing Owner | To Phase    | Incoming Owner | Handover Checklist Signed | Acceptance Status                                 |
+| :---------- | :------------- | :---------- | :------------- | :------------------------ | :------------------------------------------------ |
+| **Phase 0** | Monish         | **Phase 1** | Ashif          | `[x]` Signed (Monish)     | Ready for Handover (7/7 verification checks PASS) |
+| **Phase 1** | Ashif          | **Phase 2** | Nitish         | `[ ]` Pending             | Ready to commence Phase 1                         |
+| **Phase 2** | Nitish         | **Phase 3** | Darshan        | `[ ]` Pending             | Blocked by Phase 1                                |
+| **Phase 3** | Darshan        | **Phase 4** | Monish         | `[ ]` Pending             | Blocked by Phase 2                                |
+| **Phase 4** | Monish         | **Release** | All Team       | `[ ]` Pending             | Blocked by Phase 3                                |
