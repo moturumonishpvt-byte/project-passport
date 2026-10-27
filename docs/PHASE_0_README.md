@@ -347,3 +347,29 @@ For **Ashif** to begin Phase 1:
 - **Phase 0 Baseline**: Currently returns baseline sample metrics; full symbol extraction and call hierarchy become active in Phases 1 and 2.
 - **Tree-sitter Language Support**: Prototype target covers TypeScript/JavaScript and Python; other languages will be evaluated for future production releases.
 - **Standalone Antigravity IDE APIs**: Not relied upon directly; Project Passport uses standard VS Code Extension APIs to ensure universal compatibility.
+
+---
+
+## 26. Prototype File Inventory & Architecture Audit
+
+An audit comparing the Git working tree against the intended prototype blueprint and all phase specifications:
+
+### Audit Summary
+
+- **Total Tracked Files**: 100 files (including root `README.md` and Phase 1 scaffolds).
+- **Missing Required Files**: 0 missing. All planned modules, SDD files, and configurations exist.
+- **Extra Files**: None. All files correspond directly to the approved blueprint.
+- **Architecture Conflicts**: None. Canonical constitution referenced consistently, single source of truth in `.specify/memory/constitution.md`.
+
+### Phase-by-Phase File Inventory & Deferred Implementation Status
+
+| Module / Path                   | Expected Files                                                                                                                                                                                                    | Actual Status              | Purpose & Deferral Notes                                                                                                                                   |
+| :------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Root & Config**               | `package.json`, `tsconfig.json`, `tsconfig.test.json`, `eslint.config.js`, `.prettierrc.json`, `esbuild.config.mjs`, `vitest.config.ts`, `LICENSE`, `SECURITY.md`, `CONTRIBUTING.md`, `CHANGELOG.md`, `README.md` | PRESENT                    | Fully implemented and verified.                                                                                                                            |
+| **SDD Foundation**              | `.specify/memory/constitution.md`, `.specify/templates/*` (4 templates), `.specify/scripts/validate-sdd.mjs`, `specs/constitution.md`, `specs/architecture.md`, `specs/phase-0..4/*` (20 files)                   | PRESENT                    | All 5 phases fully specified with spec, plan, tasks, acceptance criteria.                                                                                  |
+| **Phase 0 (Core & UI)**         | `src/extension.ts`, `src/commands/*`, `src/core/*`, `src/ui/*`, `src/utils/*`                                                                                                                                     | PRESENT                    | Runnable baseline extension with commands, mock webview panel, logger, and orchestrator.                                                                   |
+| **Phase 1 (Scanner & Storage)** | `src/scanner/types.ts`, `src/scanner/index.ts`, `src/scanner/hasher.ts`, `src/storage/types.ts`, `src/storage/index.ts`, `src/storage/schema.ts`, `tests/unit/scanner.test.ts`, `tests/unit/storage.test.ts`      | PRESENT (Scaffolded)       | **Intentionally Deferred to Ashif**: File system walk, SQLite database driver bindings, table migrations, and incremental watcher.                         |
+| **Phase 2 (Parser & Graph)**    | `src/parser/types.ts`, `src/parser/index.ts`, `src/graph/types.ts`, `src/graph/index.ts`                                                                                                                          | PRESENT (Scaffolded)       | **Intentionally Deferred to Nitish**: Tree-sitter WASM grammar loaders, AST symbol extraction queries, import resolution, and call graph edge computation. |
+| **Phase 3 (Passport & UI)**     | `src/passport/types.ts`, `src/passport/index.ts`, `src/ui/types.ts`, `src/ui/panel.ts`                                                                                                                            | PRESENT (Baseline Webview) | **Intentionally Deferred to Darshan**: Interactive D3/SVG dependency graph canvas, rich metric charts, and bi-directional editor jump interactions.        |
+| **Phase 4 (Static Analysis)**   | `src/analysis/types.ts`, `src/analysis/index.ts`                                                                                                                                                                  | PRESENT (Scaffolded)       | **Intentionally Deferred to Monish**: Static analysis rules for circular dependency detection and orphan function identification.                          |
+| **Test Fixtures & Helpers**     | `tests/fixtures/sample-repo/*`, `tests/helpers/*`, `tests/unit/*`, `tests/integration/*`, `tests/e2e/*`                                                                                                           | PRESENT                    | 14 automated tests executing across 6 test suites with Vitest.                                                                                             |
