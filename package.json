@@ -1,0 +1,66 @@
+{
+  "name": "project-passport",
+  "displayName": "Project Passport: Credit-Free AI Codebase Intelligence",
+  "description": "Local-first codebase intelligence and architecture passport for AI-generated applications without credit consumption",
+  "version": "0.1.0",
+  "type": "module",
+  "publisher": "project-passport",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.90.0",
+    "node": ">=20.0.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:project-passport.showPassport",
+    "onCommand:project-passport.scanWorkspace"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "project-passport.showPassport",
+        "title": "Project Passport: Open Overview",
+        "category": "Project Passport"
+      },
+      {
+        "command": "project-passport.scanWorkspace",
+        "title": "Project Passport: Sample Workspace Files (Phase 0 Baseline)",
+        "category": "Project Passport"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "node esbuild.config.mjs",
+    "watch": "node esbuild.config.mjs --watch",
+    "compile": "tsc -p ./ --noEmit",
+    "test": "vitest run --config vitest.config.ts",
+    "test:watch": "vitest --config vitest.config.ts",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check-env": "node ./scripts/check-environment.mjs",
+    "validate:sdd": "node ./.specify/scripts/validate-sdd.mjs",
+    "verify": "node ./scripts/verify-project.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.4.0",
+    "@types/node": "^20.14.0",
+    "@types/vscode": "^1.90.0",
+    "esbuild": "^0.21.4",
+    "eslint": "^9.4.0",
+    "prettier": "^3.3.1",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^8.0.0",
+    "@vitest/coverage-v8": "^1.6.0",
+    "vitest": "^1.6.0"
+  },
+  "allowScripts": {
+    "esbuild@0.21.5": true
+  }
+}

@@ -1,0 +1,8 @@
+dist/
+out/
+node_modules/
+package-lock.json
+.vscode-test/
+tests/fixtures/
+*.sqlite
+*.db

@@ -1,0 +1,9 @@
+{
+  "name": "sample-fixture-repo",
+  "version": "1.0.0",
+  "description": "Synthetic fixture repository for Project Passport automated tests",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  }
+}
